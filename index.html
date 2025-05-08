@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejores Cantantes y Canciones</title>
+    <link rel="stylesheet" href="introduccion.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Explora los Mejores Cantantes y Sus Canciones</h1>
+    </div>
+    
+    <div class="container">  
+        <div class="intro">
+            <p>
+                ¿Buscas información y sugerencias sobre algunos de los mejores cantantes?<br> 
+                Bienvenido a mi sitio <br>
+                Aquí encontrarás recomendaciones de artistas destacados y una selección de sus canciones más populares para disfrutar.<br>
+                Sumérgete en el mundo de la música y descubre nuevas melodías para tu playlist.
+            </p>
+            <a href="intento 0.html" class="btn">Explorar ahora</a>
+        </div>
+    </div>
+ 
+    <div class="carousel-container">
+        <div class="carousel">
+            <a href="bruno-mars.html"><img src="mars.jpg" alt="Bruno Mars"></a>
+            <a href="best singer billie.html"><img src="billie eilish.jpeg" alt="Billie Eilish"></a>
+            <a href="rihanna.html"><img src="RIHANNA.jpg" alt="Rihanna"></a>
+            <a href="singer weeknd.html"><img src="THE WEEKND.jpg" alt="The Weeknd"></a>
+
+            
+            <a href="taylor-swift.html"><img src="TYLOR.jpg" alt="Taylor Swift"></a>
+            <a href="ed-sheeran.html"><img src="ED SHEERAN.jpg" alt="Ed Sheeran"></a>
+            <a href="rauw-alejandro.html"><img src="RAW ALEJANDRO.jpg" alt="Rauw Alejandro"></a>
+
+            <a href="bruno-mars.html"><img src="mars.jpg" alt="Bruno Mars"></a>
+            <a href="best singer billie.html"><img src="billie eilish.jpeg" alt="Billie Eilish"></a>
+            <a href="rihanna.html"><img src="RIHANNA.jpg" alt="Rihanna"></a>
+            <a href="the-weeknd.html"><img src="THE WEEKND.jpg" alt="The Weeknd"></a>
+            <a href="taylor-swift.html"><img src="TYLOR.jpg" alt="Taylor Swift"></a>
+            <a href="ed-sheeran.html"><img src="ED SHEERAN.jpg" alt="Ed Sheeran"></a>
+            <a href="rauw-alejandro.html"><img src="RAW ALEJANDRO.jpg" alt="Rauw Alejandro"></a>
+
+        </div>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        let index = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const imgWidth = images[0].offsetWidth + 10; // Ancho de la imagen + margen
+        let interval;
+
+        function moveSlide() {
+            index++;
+            carousel.style.transition = "transform 0.5s ease-in-out";
+            carousel.style.transform = `translateX(-${index * imgWidth}px)`;
+
+            // Reset cuando llega al final (sin parpadeo)
+            setTimeout(() => {
+                if (index >= images.length / 2) {
+                    index = 0;
+                    carousel.style.transition = "none";
+                    carousel.style.transform = `translateX(0px)`;
+                }
+            }, 500);
+        }
+
+        function startAutoPlay() {
+            interval = setInterval(moveSlide, 2000); // Cambia cada 2 segundos
+        }
+
+        startAutoPlay();
+    </script>
+    
+    <footer>
+        <p>© 2024 Best Singer. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
